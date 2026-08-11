@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earn Bot</title>
+
+  <!-- Ad Script -->
+  <script src="//libtl.com/sdk.js"
+          data-zone="11555427"
+          data-sdk="show_11555427"></script>
+
+  <style>
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      background:#0f172a;
+      color:white;
+      text-align:center;
+    }
+
+    .container{
+      max-width:420px;
+      margin:auto;
+      padding:25px 18px;
+    }
+
+    .card{
+      background:#1e293b;
+      border-radius:18px;
+      padding:25px;
+      margin-top:20px;
+    }
+
+    h1{
+      margin-bottom:10px;
+    }
+
+    .balance{
+      font-size:32px;
+      font-weight:bold;
+      margin:20px 0;
+    }
+
+    button{
+      width:100%;
+      padding:15px;
+      margin-top:12px;
+      border:0;
+      border-radius:12px;
+      background:#22c55e;
+      color:white;
+      font-size:17px;
+      font-weight:bold;
+      cursor:pointer;
+    }
+
+    button:active{
+      transform:scale(.98);
+    }
+
+    .info{
+      margin-top:18px;
+      font-size:15px;
+      color:#cbd5e1;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>💰 Earn Bot</h1>
+
+  <div class="card">
+
+    <div>আপনার ব্যালেন্স</div>
+
+    <div class="balance">
+      ৳ <span id="balance">0</span>
+    </div>
+
+    <button onclick="watchAd()">
+      📺 Ad দেখুন
+    </button>
+
+    <button onclick="withdraw()">
+      💳 Withdraw
+    </button>
+
+    <div class="info">
+      মোট Ad দেখা হয়েছে: <span id="ads">0</span>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  let balance = 0;
+  let ads = 0;
+
+  function watchAd(){
+
+    // Ad SDK থাকলে চালানোর চেষ্টা
+    if(typeof show_11555427 === "function"){
+      show_11555427();
+    }
+
+    // UI reward
+    ads++;
+    balance += 1;
+
+    document.getElementById("balance").innerText = balance;
+    document.getElementById("ads").innerText = ads;
+  }
+
+  function withdraw(){
+    alert("Withdraw ব্যবস্থা বর্তমানে সংযুক্ত করা হয়নি।");
+  }
+</script>
+
+</body>
+  </html>
